@@ -1,0 +1,170 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{tikz}
+\usepackage [utf8] {inputenc}
+\usepackage [T2A] {fontenc} 
+\usepackage[russian]{babel}
+% Так ссылки в PDF будут активны
+\usepackage[unicode]{hyperref}
+\usepackage{ textcomp }
+\usepackage{indentfirst}
+
+
+%===============================================================================
+
+% Title settings for Russian language in amsart
+
+%===============================================================================
+
+\makeatletter
+\def\@settitle{\begin{center}%
+		\baselineskip14\p@\relax
+		\bfseries\scshape
+		\@title
+	\end{center}%
+}
+\makeatother
+
+%===============================================================================
+
+% Theorem styles
+
+%===============================================================================
+\usepackage{amsxtra}
+\usepackage{enumitem, fancyref, theoremref}
+\usepackage{amsrefs, latexsym, pstricks, mathtext}
+\usepackage{hyperref, caption, fancyhdr, listings}
+
+\renewenvironment{proof}{{\bfseries\itshape Доказательство.}}{\begin{flushright}
+		$\Box$
+\end{flushright}}
+
+\newenvironment{sol}{{\bfseries\itshape Решение.}}{\begin{flushright}
+		$\Box$
+\end{flushright}}
+
+\theoremstyle{plain}
+\newtheorem*{quest}{Вопрос}
+\newtheorem{prop}{Предложение}
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{lemma}{Лемма}[section]
+
+\theoremstyle{remark}
+\newtheorem{conseq}{Вывод}
+\newtheorem{rem}{Замечание}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}
+
+\newtheoremstyle{problem}
+{\topsep}   % ABOVESPACE
+{\topsep}   % BELOWSPACE
+{\normalfont}  % BODYFONT
+{0pt}       % INDENT
+{\bfseries} % HEADFONT
+{.}         % HEADPUNCT
+{5pt plus 1pt minus 1pt} % HEADSPACE
+{}          % CUSTOM-HEAD-SPEC
+\newtheorem{problem}{Задача}
+
+%===============================================================================
+
+
+
+% вы сможете вставлять картинки командой \includegraphics[width=0.7\textwidth]{ИМЯ ФАЙЛА}
+% получается подключать, как минимум, файлы .pdf, .jpg, .png.
+\usepackage{graphicx}
+% Если вы хотите явно указать поля:
+\usepackage[margin=1in]{geometry}
+% Или если вы хотите задать поля менее явно (чем больше DIV, тем больше места под текст):
+% \usepackage[DIV=10]{typearea}
+
+\usepackage{fancyhdr}
+
+\newcommand{\bbR}{\mathbb R}%теперь вместо длинной команды \mathbb R (множество вещественных чисел) можно писать короткую запись \bbR. Вместо \bbR вы можете вписать любую строчку букв, которая начинается с '\'.
+\newcommand{\eps}{\varepsilon}
+\newcommand{\bbN}{\mathbb N}
+\newcommand{\dif}{\mathrm{d}}
+
+\newtheorem{Def}{Definition}
+
+
+\pagestyle{fancy}
+\makeatletter % сделать "@" "буквой", а не "спецсимволом" - можно использовать "служебные" команды, содержащие @ в названии
+\fancyhead[L]{\footnotesize \@title}%Это будет написано вверху страницы слева
+\fancyhead[R]{\footnotesize <<Физтех-лицей>> им. П. Л. Капицы}
+\fancyfoot[L]{\footnotesize \@author}%имя автора будет написано внизу страницы слева
+\fancyfoot[R]{\@date}%номер страницы —- внизу справа
+\fancyfoot[C]{\thepage}%по центру внизу страницы пусто
+
+\renewcommand{\maketitle}{%Настройка заголовка
+	\noindent{\bfseries\scshape\large\@title\ \mdseries\upshape}\par
+	\noindent {\large\itshape Author: \@author}
+	\vskip 2ex}
+\makeatother
+\def\dd#1#2{\frac{\partial#1}{\partial#2}}
+\def\ssum#1#2{\sum\limits_{#1}^{#2}}
+\def\l{\langle}
+\def\r{\rangle}
+
+\graphicspath{{images//}}
+
+\hypersetup{
+	pdfauthor={Kim Zyong}
+}
+
+\usepackage{multirow}
+\usepackage{colortbl}
+
+\title{Задание тригонометрия}
+\author{Ким Зыонг} 
+\date{\today}
+
+\begin{document}
+	\maketitle
+	\begin{problem}
+		Из колоды, содержащей 52 карты, вынули 10 карт. Сколько существует способов вынуть их так, чтобы среди этих карт
+		\begin{enumerate}
+			\item  был хотя бы один туз;
+			
+			\item  был ровно один туз;
+			
+			\item  было не менее двух тузов;
+			
+			\item  было ровно два туза?
+		\end{enumerate}
+	\end{problem}
+
+	\begin{problem}
+		За круглым столом сидят $n$ рыцарей. Сколькими способами можно из них отобрать $k$ рыцарей, чтобы в их число не попали никакие два сидящих рядом?
+	\end{problem}
+
+	\begin{problem}
+		Из 100 человек 85 знают английский язык, 80 -- испанский, 75 -- немецкий. Сколько человек заведомо знают все три языка?
+		
+	\end{problem}
+
+	\begin{problem}
+		Сколько существует чисел, меньших 1000, которые не кратны ни 2, ни 3, ни 5?
+	\end{problem}
+
+	\begin{problem}
+		На книжной полке стоят $n$ книг. Сколькими способами можно выбрать из них $k$ книг так, чтобы в их число не попали никакие две стоящие рядом?
+	\end{problem}
+
+	\begin{problem}
+		Бросают $n$ игральных костей. В результате получают $n$ чисел от 1 до 6 Сколько может получиться различных результатов, если результаты, отличающиеся друг от друга лишь порядком очков, считаются одинаковыми?
+	\end{problem}
+
+	\begin{problem}
+		Сколько натуральных делителей имеет число $2007^{2007}$?
+	\end{problem}
+
+	\begin{problem}
+		Каждая сторона квадрата разбита на $n$ частей. Сколько можно построить треугольников, вершинами которых являются точки разбиения (вершины квадрата такими точками не считать)?
+	\end{problem}
+
+	\begin{problem}
+		Сколькими способами можно разделить $n_1$ предметов первого вида, $n_2$ предметов второго вида, ..., $n_k$ предметов $k$-го вида по $m$ различным ящикам, считая, что предметы каждого вида неразличимы между собой?
+	\end{problem}
+\end{document}
